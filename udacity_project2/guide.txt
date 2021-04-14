@@ -1,0 +1,30 @@
+az login
+az extension add -n azure-cli-ml
+az ad sp create-for-rbac --sdk-auth --name ml-auth
+
+Capture the "objectId" using the clientID:
+
+az ad sp show --id xxxxxxxx-3af0-4065-8e14-xxxxxxxxxxxx
+
+Assign the role to the new Service Principal for the given Workspace, Resource Group and User objectId
+$ az ml workspace share -w Demo -g demo --user xxxxxxxx-cbdb-4cfd-089f-xxxxxxxxxxxx --role owner
+
+For application insights
+download config.json
+enable application insights in logs.py file and run the file 
+
+
+for swagger documentation 
+change the port to 9000:8080
+curl download swagger url 
+bash swagger.sh 
+and serve.py
+http://localhost:8000/swagger.json
+
+
+primary key and token in endpoints.py
+
+
+run the jupyter notebook 
+
+always place the rubrik in next tab 
